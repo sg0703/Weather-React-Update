@@ -2,7 +2,6 @@ import React from 'react';
 
 const SearchBar = () => {
     return(
-        <div className="col-md-3">
             <div className="card">
                 <h5 className="card-header bg-dark text-light">What's the weather in...</h5>
                 <div className="card-body">
@@ -22,7 +21,6 @@ const SearchBar = () => {
                       
                 </div>
             </div>
-        </div>
     );
 }
 
