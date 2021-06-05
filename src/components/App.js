@@ -1,9 +1,10 @@
 import React from 'react';
+import SearchBar from './SearchBar.js';
 
 const App = () => {
     return(
-        <div>
-            <h1>Weather App!</h1> 
+        <div className="row p-5">
+            <SearchBar />
         </div>
     );
 }
