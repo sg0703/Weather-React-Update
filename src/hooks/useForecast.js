@@ -10,15 +10,17 @@ const useForecast = (defaultCity) => {
 
     const search = async (city) => {
         // send API request
-        const res = await weather.get('/search', {
+        const res = await weather.get('/weather', {
             params: {
                 q: city
             }
         });
-
+        console.log(res)
         // set state var
-        setForecast();
+        setForecast(res.data.main.temp);
     }
+
+    return [forecast, search];
 }
 
 export default useForecast;

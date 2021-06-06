@@ -1,9 +1,12 @@
 import React from 'react';
+import WeatherForecast from './WeatherForecast';
 
-const WeatherForecast = () => {
+const WeatherForecastList = ({ forecast }) => {
+    console.log(forecast)
+
     return(
-        <h1>This is where the weather results go</h1>
+        <WeatherForecast temp={forecast}/>
     );
 }
 
-export default WeatherForecast;
+export default WeatherForecastList;
