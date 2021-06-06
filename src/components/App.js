@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar.js';
+import WeatherForecastList from './WeatherForecastList';
 
 const App = () => {
     return(
@@ -8,7 +9,7 @@ const App = () => {
                 <SearchBar />
             </div>
             <div className="col-md-9 m-0 p-0">
-                <h1>This is where the weather results go</h1>
+                <WeatherForecastList />
             </div>
         </div>
     );
