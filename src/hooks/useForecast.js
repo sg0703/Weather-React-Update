@@ -15,9 +15,19 @@ const useForecast = (defaultCity) => {
                 q: city
             }
         });
-        console.log(res)
-        // set state var
-        setForecast(res.data.main.temp);
+
+        // destructure response and send new object to react
+        let newForecast = {
+            name: res.data.name,
+            temp: res.data.main.temp,
+            temp_min: res.data.main.temp_min,
+            temp_max: res.data.main.temp_max, 
+            humidity: res.data.main.humidity,
+            icon: res.data.weather[0].icon,
+            icon_alt: res.data.weather[0].description
+        };
+
+        setForecast(newForecast);
     }
 
     return [forecast, search];

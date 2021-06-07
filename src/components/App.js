@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar.js';
-import WeatherForecastList from './WeatherForecastList';
+import WeatherForecast from './WeatherForecast';
 import useForecast from '../hooks/useForecast';
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
                 <SearchBar onFormSubmit={search} />
             </div>
             <div className="col-md-9 m-0 p-0">
-                <WeatherForecastList forecast={forecast}/>
+                <WeatherForecast forecast={forecast}/>
             </div>
         </div>
     );
