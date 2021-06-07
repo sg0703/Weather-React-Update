@@ -4,7 +4,9 @@
 
 ## Description
 
-For this project, I re-wrote the Weather App! using React.js. This app utilizes the OpenWeather API to get current weather conditions for any city that you search. This is the first draft, later versions will include a 5 day forecast and will store past successful searches.
+For this project, I re-wrote the Weather App! using React.js. This app utilizes the OpenWeather API to get current weather conditions for any city that you search along with a 7 day forecast. Currently working on saving past successful searches. This feature will be deployed soon.
+
+![Screenshot](readme/screenshot.png)
 
 ## Install and Test
 
