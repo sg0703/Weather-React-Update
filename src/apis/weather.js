@@ -14,9 +14,8 @@ import { KEY } from './config.js';
  * */
 
 export default axios.create({
-    baseURL: 'https://api.openweathermap.org/data/2.5/',
+    baseURL: 'https://api.openweathermap.org/',
     params: {
-        appid: KEY,
-        units: 'imperial'
+        appid: KEY
     }
 });

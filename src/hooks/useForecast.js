@@ -9,23 +9,41 @@ const useForecast = (defaultCity) => {
     }, [defaultCity]);
 
     const search = async (city) => {
-        // send API request
-        const res = await weather.get('/weather', {
+        // get city coordinates
+        const coordsRaw = await weather.get('/geo/1.0/direct', {
             params: {
-                q: city
+                q: city,
+                limit: 1
+            }
+        });
+
+        console.log(coordsRaw)
+
+        const coords = {
+            lat: coordsRaw.data[0].lat,
+            long: coordsRaw.data[0].lon
+        };
+
+        const res = await weather.get('/data/2.5/onecall', {
+            params: {
+                lat: coords.lat,
+                lon: coords.long,
+                exclude: 'minutely,hourly,alerts',
+                units: 'imperial'
             }
         });
 
         // destructure response and send new object to react
         let newForecast = {
-            name: res.data.name,
-            temp: res.data.main.temp,
-            temp_min: res.data.main.temp_min,
-            temp_max: res.data.main.temp_max, 
-            humidity: res.data.main.humidity,
-            icon: res.data.weather[0].icon,
-            icon_alt: res.data.weather[0].description
+            name: city,
+            temp: res.data.current.temp,
+            humidity: res.data.current.humidity,
+            icon: res.data.current.weather[0].icon,
+            icon_alt: res.data.current.weather[0].description,
+            fiveDay: res.data.daily
         };
+
+        console.log(newForecast)
 
         setForecast(newForecast);
     }
