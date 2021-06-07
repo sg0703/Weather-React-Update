@@ -3,7 +3,7 @@ import React from 'react';
 const WeatherForecast = ({ forecast }) => {
     return (
         <div className="card">
-        <div className="card-header">
+        <div className="card-header d-flex align-items-center bg-secondary text-light">
             <h1>{ forecast.name }</h1>
             <img
                 src={`https://openweathermap.org/img/wn/${forecast.icon}.png`}

@@ -8,7 +8,7 @@ const App = () => {
     const [forecast,search] = useForecast('Raleigh');
 
     return(
-        <div className="row p-5">
+        <div className="row p-5 mb-5">
             <div className="col-md-3">
                 <SearchBar onFormSubmit={search} />
             </div>
