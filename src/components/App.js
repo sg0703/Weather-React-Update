@@ -14,8 +14,8 @@ const App = () => {
             </div>
             <div className="col-md-9 m-0 p-0">
                 <WeatherForecast forecast={forecast} />
+                <WeatherDetailList forecast={forecast} />
             </div>
-            <WeatherDetailList forecast={forecast} />
         </div>
     );
 }
