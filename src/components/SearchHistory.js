@@ -3,7 +3,7 @@ import SearchHistoryDetail from './SearchHistoryDetail';
 
 const SearchHistory = ({ history }) => {
     if(!history) {
-        return <h1>No history yet!</h1>;
+        return null;
     }
 
     const cards = history.map((city, i) => {
