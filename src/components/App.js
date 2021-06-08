@@ -17,7 +17,7 @@ const App = () => {
     return(
         <div className="row p-5 mb-5">
             <div className="col-md-3">
-                <SearchBar onFormSubmit={search} />
+                <SearchBar onFormSubmit={search} getHistory={getHistory}/>
                 <SearchHistory history={history} />
             </div>
             <div className="col-md-9 m-0 p-0">

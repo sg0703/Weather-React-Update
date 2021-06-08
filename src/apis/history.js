@@ -24,7 +24,7 @@ export const addPastSearch = (city) => {
  
  // retrives past searches, uses displayData to write to page
  export const getPastSearches = () => {
-     return localStorage.getItem("pastSearches") ? localStorage.getItem("pastSearches") : null;
+     return localStorage.getItem("pastSearches") ? JSON.parse(localStorage.getItem("pastSearches")) : null;
  }
  
  // clears search history

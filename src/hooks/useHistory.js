@@ -1,16 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { getPastSearches } from '../apis/history';
 
 const useHistory = () => {
     const [history, setHistory] = useState([]);
 
-    useEffect(() => {
-        getHistory();
-    }, [history]);
-
     const getHistory = () => {
         const pastSearches = getPastSearches();
-
+        console.log(pastSearches)
         setHistory(pastSearches);
     }
 

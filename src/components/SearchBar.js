@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ onFormSubmit }) => {
+const SearchBar = ({ onFormSubmit, getHistory }) => {
     const [city, setCity] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault();
         // this calls prop function inherited from App, which is actually SEARCH
         onFormSubmit(city);
+        getHistory();
     }
 
     return(

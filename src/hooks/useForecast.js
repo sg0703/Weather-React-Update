@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import weather from '../apis/weather';
-import { addPastSearch } from '../apis/history';
+import { addPastSearch, getPastSearches } from '../apis/history';
 
 const useForecast = (defaultCity) => {
     const [forecast, setForecast] = useState([]);
 
     useEffect(() => {
         search(defaultCity);
+        getPastSearches();
     }, [defaultCity]);
 
     const search = async (city) => {
