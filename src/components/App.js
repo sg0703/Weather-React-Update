@@ -6,7 +6,7 @@ import SearchHistory from './SearchHistory';
 import useForecast from '../hooks/useForecast';
 
 const App = () => {
-    const [forecast,history,search] = useForecast('Raleigh');
+    const [forecast,search] = useForecast('Raleigh');
 
     return(
         <div className="row p-5 mb-5">
@@ -14,7 +14,7 @@ const App = () => {
                 <SearchBar 
                     onFormSubmit={search} 
                 />
-                <SearchHistory history={history} />
+                <SearchHistory history={forecast.history} />
             </div>
             <div className="col-md-9 m-0 p-0">
                 <WeatherForecast forecast={forecast} />

@@ -4,7 +4,7 @@ import { addPastSearch, getPastSearches } from '../apis/history';
 
 const useForecast = (defaultCity) => {
     const [forecast, setForecast] = useState([]);
-    const [history,setHistory] = useState([]);
+    //const [history, setHistory] = useState([]);
 
     useEffect(() => {
         search(defaultCity);
@@ -35,6 +35,11 @@ const useForecast = (defaultCity) => {
             }
         });
 
+        // add search to localstorage
+        addPastSearch(city);
+
+        let history = getPastSearches();
+
         // destructure response and send new object to react
         let newForecast = {
             name: city,
@@ -42,21 +47,20 @@ const useForecast = (defaultCity) => {
             humidity: res.data.current.humidity,
             icon: res.data.current.weather[0].icon,
             icon_alt: res.data.current.weather[0].description,
-            fiveDay: res.data.daily
+            fiveDay: res.data.daily,
+            history: history
         };
 
         // send forecast data to components
         setForecast(newForecast);
 
-        // add search to localstorage
-        addPastSearch(city);
 
         // set history
-        let temp = getPastSearches();
-        setHistory(temp);
+        //let temp = getPastSearches();
+        //setHistory(temp);
     }
 
-    return [forecast, history, search];
+    return [forecast, search];
 }
 
 export default useForecast;
