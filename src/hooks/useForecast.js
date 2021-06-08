@@ -4,12 +4,12 @@ import { addPastSearch, getPastSearches } from '../apis/history';
 
 const useForecast = (defaultCity) => {
     const [forecast, setForecast] = useState([]);
+    const [history,setHistory] = useState([]);
 
     useEffect(() => {
         search(defaultCity);
-        getPastSearches();
     }, [defaultCity]);
-
+   
     const search = async (city) => {
         // get city coordinates
         const coordsRaw = await weather.get('/geo/1.0/direct', {
@@ -45,13 +45,18 @@ const useForecast = (defaultCity) => {
             fiveDay: res.data.daily
         };
 
-        // add search to localstorage
-        addPastSearch(city);
         // send forecast data to components
         setForecast(newForecast);
+
+        // add search to localstorage
+        addPastSearch(city);
+
+        // set history
+        let temp = getPastSearches();
+        setHistory(temp);
     }
 
-    return [forecast, search];
+    return [forecast, history, search];
 }
 
 export default useForecast;

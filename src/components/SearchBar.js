@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ onFormSubmit, getHistory }) => {
+const SearchBar = ({ onFormSubmit }) => {
     const [city, setCity] = useState('');
-
+    
     const onSubmit = (e) => {
         e.preventDefault();
         // this calls prop function inherited from App, which is actually SEARCH
         onFormSubmit(city);
-        getHistory();
     }
 
     return(
@@ -22,7 +21,6 @@ const SearchBar = ({ onFormSubmit, getHistory }) => {
                             onChange={(e) => setCity(e.target.value)}
                         />
                     </form>
-                      
                 </div>
             </div>
     );

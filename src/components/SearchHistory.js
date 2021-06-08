@@ -17,7 +17,7 @@ const SearchHistory = ({ history }) => {
 
     return(
         <div className="card mt-2">
-            <h5 className="card-header bg dark text-light">
+            <h5 className="card-header bg-dark text-light">
                 Past Searches
             </h5>
             <div className="card-body">
