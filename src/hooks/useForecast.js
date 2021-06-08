@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import weather from '../apis/weather';
+import { addPastSearch } from '../apis/history';
 
 const useForecast = (defaultCity) => {
     const [forecast, setForecast] = useState([]);
@@ -43,8 +44,9 @@ const useForecast = (defaultCity) => {
             fiveDay: res.data.daily
         };
 
-        console.log(newForecast)
-
+        // add search to localstorage
+        addPastSearch(city);
+        // send forecast data to components
         setForecast(newForecast);
     }
 
