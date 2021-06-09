@@ -1,5 +1,5 @@
 import axios from 'axios';
-//import { KEY } from './config.js'; 
+import { KEY } from './config.js'; 
 // file that exports const KEY w/ OpenWeather API key
 
 /** 
@@ -16,6 +16,6 @@ import axios from 'axios';
 export default axios.create({
     baseURL: 'https://api.openweathermap.org/',
     params: {
-        appid: process.env.API_KEY
+        appid: KEY
     }
 });
