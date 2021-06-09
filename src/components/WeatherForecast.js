@@ -3,7 +3,7 @@ import React from 'react';
 const WeatherForecast = ({ forecast }) => {
     return (
         <div className="card">
-        <div className="card-header d-flex align-items-center bg-secondary text-light">
+        <div className="card-header d-flex align-items-center">
             <h1>{ forecast.name }</h1>
             <img
                 src={`https://openweathermap.org/img/wn/${forecast.icon}.png`}
@@ -12,7 +12,7 @@ const WeatherForecast = ({ forecast }) => {
         </div>
         <ul className="list-group list-group-flush">
             <li className="list-group-item">
-                Current temperature: {forecast.temp.toFixed(1)}&deg;F
+                Current temperature: {forecast.temp ? forecast.temp.toFixed(1) : forecast.temp} &deg;F 
             </li>
             <li className="list-group-item">
                 Humidity: {forecast.humidity}%
