@@ -13,6 +13,10 @@ import { KEY } from './config.js';
  * 
  * */
 
+if (!KEY) {
+    KEY = process.env.API_KEY;
+}
+
 export default axios.create({
     baseURL: 'https://api.openweathermap.org/',
     params: {

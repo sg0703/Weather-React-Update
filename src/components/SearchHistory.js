@@ -10,7 +10,7 @@ const SearchHistory = ({ history }) => {
         return (
             <SearchHistoryDetail
                 city={city}
-                key={i}
+                key={`day_${i}`}
             />
         );
     });
