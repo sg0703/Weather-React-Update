@@ -12,10 +12,10 @@ const WeatherForecast = ({ forecast }) => {
         </div>
         <ul className="list-group list-group-flush">
             <li className="list-group-item">
-                Current temperature: {forecast.temp}
+                Current temperature: {forecast.temp.toFixed(1)}&deg;F
             </li>
             <li className="list-group-item">
-                Humidity: {forecast.humidity}
+                Humidity: {forecast.humidity}%
             </li>
         </ul>
         </div>

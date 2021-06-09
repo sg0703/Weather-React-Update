@@ -25,10 +25,10 @@ const WeatherDetail = ({ day }) => {
         </div>
         <ul className="list-group list-group-flush">
             <li className="list-group-item">
-                Temperature: {day.temp.day}
+                Temperature: {day.temp.day.toFixed(1)}&deg;F
             </li>
             <li className="list-group-item">
-                Humidity: {day.humidity}
+                Humidity: {day.humidity}%
             </li>
         </ul>
         </div>
