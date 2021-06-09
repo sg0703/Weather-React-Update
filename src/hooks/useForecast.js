@@ -53,11 +53,6 @@ const useForecast = (defaultCity) => {
 
         // send forecast data to components
         setForecast(newForecast);
-
-
-        // set history
-        //let temp = getPastSearches();
-        //setHistory(temp);
     }
 
     return [forecast, search];
