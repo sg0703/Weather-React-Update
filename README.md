@@ -8,6 +8,10 @@ For this project, I re-wrote the Weather App! using React.js. This app utilizes 
 
 ![Screenshot](readme/screenshot.png)
 
+## Deployed
+
+See the deployed version on my portfolio site [here](https://samgates.io/projects/weather-app/).
+
 ## Install and Test
 
 Download the repo, get your API key, configure the app to use your API key and try it out.
