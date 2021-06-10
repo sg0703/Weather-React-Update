@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeatherForecast = ({ forecast }) => {
     return (
-        <div className="card">
+        <div className="card m-2">
         <div className="card-header d-flex align-items-center">
             <h1>{ forecast.name }</h1>
             <img
